@@ -44,8 +44,8 @@ The rationale behind the chosen formula is rooted in a meticulous consideration 
 ## Outputs
 
 The analysis for now has led into 2 parts
-1. Creating a basic smoke impact model and comparing that with the AQI data from EPA
-2. Creating basic visuals like the following:
+1. Creating a basic smoke impact model and comparing that with the AQI data from EPA. This can be viewed at the end of `src/Building Smoke estimates.ipynb` notebook.
+2. Creating visuals for the questions asked at the top of this document.
 
 
 
