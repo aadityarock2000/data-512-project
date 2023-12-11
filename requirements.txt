@@ -1,0 +1,12 @@
+pyproj
+geojson
+requests
+tqdm
+pandas
+numpy
+statsmodels
+matplotlib
+pmdarima
+scikit-learn
+seaborn
+

@@ -28,40 +28,40 @@ This section provides an overview of the input data along with their sources:
 
 1. [USGS Wildland Fire Combined Dataset](https://www.sciencebase.gov/catalog/item/61aa537dd34eb622f699df81): A trove of information meticulously collected and aggregated by the US Geological Survey. The dataset, available in both ArcGIS and GeoJSON formats, unveils the contours of fire polygons with comprehensive documentation. The data should be placed under `data/GeoJSON_Exports/`.(Read the pre requisite section for more information). Below is a detailed breakdown of the data fields within this dataset:
 
-| NAME | DTYPE | DESCRIPTION |
-| ----------- | ----------- | ----------- |
-| OBJECTID | Integer | Unique identification for the polygon and it's attributes |
-| USGS_Assigned_ID | Integer | Assigned unique identification for the polygon and it's attributes. Used to provide consistency if parts of the dataset are exported or the OBJECTID is otherwise changed |
-| Assigned_Fire_Type | String | Based on the fire polygon(s) used to create this fire feature what is the type assigned to this fire? If more than one type was assigned to a combined polygon, the assigned fire type was assigned in the following order of dominance: Wildfire, Likely Wildfire, Unknown - Likely Wildfire, Prescribed Fire, Unknown - Likely Prescribed Fire |
-| Fire_Year | Integer | The calendar year when the dataset creators determined the fire occurred |
-| Fire_Polygon_Tier | Integer | The tier from which the fire polygon was generated. One or more polygons within the tier could be combined to create the fire polygon |
-| Fire_Attribute_Tiers | String | All fire tiers that contributed attributes to the fire feature. A list of all tiers where a polygon intersects the current fire perimeter in space and time |
-| GIS_Acres | Float | The GIS calculated acres of the fire polygon calculated by using the Calculate Geometry tool in ArcGIS Pro |
-| GIS_Hectares | Float | The GIS calculated hectares of the fire polygon calculated by using the Calculate Geometry tool in ArcGIS Pro |
-| Source_Datasets | String | All of the original source datasets that contributed to either the polygon or the attributes. Each dataset has the number of polygons contributed listed in parentheses after the dataset name |
-| Listed_Fire_Types | String | Each fire type listed in the fires from the merged dataset that intersect this polygon in space and year. The number of features that contributed the specific fire type are in parentheses after the fire type |
-| Listed_Fire_Names | String | Each fire name listed in the fires from the merged dataset that intersect this polygon in space and year. The number of features that contributed the specific fire name are in parentheses after the fire name |
-| Listed_Fire_Codes | String | Each fire code listed in the fires from the merged dataset that intersect this polygon in space and year. The number of features that contributed the specific fire code are in parentheses after the fire code |
-| Listed_Fire_IDs | String | Each fire type listed in the IDs from the merged dataset that intersect this polygon in space and year. The number of features that contributed the specific fire ID are in parentheses after the fire ID |
-| Listed_Fire_IRWIN_IDs | String | Each fire IRWIN ID listed in the fires from the merged dataset that intersect this polygon in space and year. The number of features that contributed the specific fire IRWIN ID are in parentheses after the fire IRWIN ID |
-| Listed_Fire_Dates | String | Each fire date listed in the fires from the merged dataset that intersect this polygon in space and year. The number of features that contributed the specific fire date are in parentheses after the fire date |
-| Listed_Fire_Causes | String | Each fire cause listed in the fires from the merged dataset that intersect this polygon in space and year. The number of features that contributed the specific fire cause are in parentheses after the fire cause |
-| Listed_Fire_Cause_Class | String | Each fire cause class listed in the fires from the merged dataset that intersect this polygon in space and year. The number of features that contributed the specific fire cause class are in parentheses after the fire cause class |
-| Listed_Rx_Reported_Acres | String | Each prescribed fire reported acres listed in the fires from the merged dataset that intersect this polygon in space and year. The number of features that contributed the specific reported acres are in parentheses after the reported acres |
-| Listed_Map_Digitize_Methods | String | Each fire digitization method listed in the fires from the merged dataset that intersect this polygon in space and year. The number of features that contributed the specific fire digitization method are in parentheses after the fire digitization method |
-| Listed_Notes | String | Each fire notes listed in the fires from the merged dataset that intersect this polygon in space and year. The number of features that contributed the specific fire notes are in parentheses after the fire note |
-| Processing_Notes | String | Indicates that the attribute data were altered during the processing and a new attribute was indicated. It will also explain the rationale for the change. Each polygon that had an attribute changed will be listed along with a count, in parentheses indicating how many polygons had the change made to them |
-| Wildfire_Notice | String | A notice present in every field that indicates the quality of the wildfire data in this dataset |
-| Prescribed_Burn_Notice | String | A notice present in every field that indicates the quality of the prescribed burn data in this dataset |
-| Wildfire_and_Rx_Flag | String | A text flag field indicating that the attributes from the various sources indicate that the fire was both a wildfire and a prescribed fire. This could indicate an error in assigning the fire type, a misassignment of the fire type, or that there were actually two fires that occurred in this area in the same year, one a wildfire and one a prescribed burn |
-| Overlap_Within_1_or_2_Flag | String | An ArcGIS Tabulate Intersection Tool was used to identify areas that burned with >10% overlap of the current fire within 1 or 2 years of the current burn. Each fire that met that criteria was included in this attribute including it's ID, year burned, percent overlap, and acres |
-| Circleness_Scale | Float | A measure of a polygon's similarity to a true circle. calculated using the Shape_Length and Shape_Area fields. Circle-ness = 4*pi*(Shape_Area/(Shape_Length * Shape_Length)). As the number approaches 1, the polygon becomes more circular |
-| Circle_Flag | String | Any Circle circle-ness values >=0.98 are flagged with a 1. The remaining values are null. 1 indicates that the polygon is very circle-like and is likely incorrect. However, other values that are not flagged may still be quite circular and incorrect |
-| Exclude_From_Summary_Rasters | String | Some fires in this dataset appear to be buffered circles. These were kept in the dataset to show location and approximate area. However a decision was made to exclude circular fires larger than 1 acre in size from the summary raster calculations. This field indicates whether the fire was excluded from ('Yes') or included in ('No') the summary raster calculations |
-| Shape_Length | Float | Automatically calculated perimeter length in meters |
-| Shape_Area | Float | Automatically calculated polygon area in square meters |
+   | NAME | DTYPE | DESCRIPTION |
+   | ----------- | ----------- | ----------- |
+   | OBJECTID | Integer | Unique identification for the polygon and it's attributes |
+   | USGS_Assigned_ID | Integer | Assigned unique identification for the polygon and it's attributes. Used to provide consistency if parts of the dataset are exported or the OBJECTID is otherwise changed |
+   | Assigned_Fire_Type | String | Based on the fire polygon(s) used to create this fire feature what is the type assigned to this fire? If more than one type was assigned to a combined polygon, the assigned fire type was assigned in the following order of dominance: Wildfire, Likely Wildfire, Unknown - Likely Wildfire, Prescribed Fire, Unknown - Likely Prescribed Fire |
+   | Fire_Year | Integer | The calendar year when the dataset creators determined the fire occurred |
+   | Fire_Polygon_Tier | Integer | The tier from which the fire polygon was generated. One or more polygons within the tier could be combined to create the fire polygon |
+   | Fire_Attribute_Tiers | String | All fire tiers that contributed attributes to the fire feature. A list of all tiers where a polygon intersects the current fire perimeter in space and time |
+   | GIS_Acres | Float | The GIS calculated acres of the fire polygon calculated by using the Calculate Geometry tool in ArcGIS Pro |
+   | GIS_Hectares | Float | The GIS calculated hectares of the fire polygon calculated by using the Calculate Geometry tool in ArcGIS Pro |
+   | Source_Datasets | String | All of the original source datasets that contributed to either the polygon or the attributes. Each dataset has the number of polygons contributed listed in parentheses after the dataset name |
+   | Listed_Fire_Types | String | Each fire type listed in the fires from the merged dataset that intersect this polygon in space and year. The number of features that contributed the specific fire type are in parentheses after the fire type |
+   | Listed_Fire_Names | String | Each fire name listed in the fires from the merged dataset that intersect this polygon in space and year. The number of features that contributed the specific fire name are in parentheses after the fire name |
+   | Listed_Fire_Codes | String | Each fire code listed in the fires from the merged dataset that intersect this polygon in space and year. The number of features that contributed the specific fire code are in parentheses after the fire code |
+   | Listed_Fire_IDs | String | Each fire type listed in the IDs from the merged dataset that intersect this polygon in space and year. The number of features that contributed the specific fire ID are in parentheses after the fire ID |
+   | Listed_Fire_IRWIN_IDs | String | Each fire IRWIN ID listed in the fires from the merged dataset that intersect this polygon in space and year. The number of features that contributed the specific fire IRWIN ID are in parentheses after the fire IRWIN ID |
+   | Listed_Fire_Dates | String | Each fire date listed in the fires from the merged dataset that intersect this polygon in space and year. The number of features that contributed the specific fire date are in parentheses after the fire date |
+   | Listed_Fire_Causes | String | Each fire cause listed in the fires from the merged dataset that intersect this polygon in space and year. The number of features that contributed the specific fire cause are in parentheses after the fire cause |
+   | Listed_Fire_Cause_Class | String | Each fire cause class listed in the fires from the merged dataset that intersect this polygon in space and year. The number of features that contributed the specific fire cause class are in parentheses after the fire cause class |
+   | Listed_Rx_Reported_Acres | String | Each prescribed fire reported acres listed in the fires from the merged dataset that intersect this polygon in space and year. The number of features that contributed the specific reported acres are in parentheses after the reported acres |
+   | Listed_Map_Digitize_Methods | String | Each fire digitization method listed in the fires from the merged dataset that intersect this polygon in space and year. The number of features that contributed the specific fire digitization method are in parentheses after the fire digitization method |
+   | Listed_Notes | String | Each fire notes listed in the fires from the merged dataset that intersect this polygon in space and year. The number of features that contributed the specific fire notes are in parentheses after the fire note |
+   | Processing_Notes | String | Indicates that the attribute data were altered during the processing and a new attribute was indicated. It will also explain the rationale for the change. Each polygon that had an attribute changed will be listed along with a count, in parentheses indicating how many polygons had the change made to them |
+   | Wildfire_Notice | String | A notice present in every field that indicates the quality of the wildfire data in this dataset |
+   | Prescribed_Burn_Notice | String | A notice present in every field that indicates the quality of the prescribed burn data in this dataset |
+   | Wildfire_and_Rx_Flag | String | A text flag field indicating that the attributes from the various sources indicate that the fire was both a wildfire and a prescribed fire. This could indicate an error in assigning the fire type, a misassignment of the fire type, or that there were actually two fires that occurred in this area in the same year, one a wildfire and one a prescribed burn |
+   | Overlap_Within_1_or_2_Flag | String | An ArcGIS Tabulate Intersection Tool was used to identify areas that burned with >10% overlap of the current fire within 1 or 2 years of the current burn. Each fire that met that criteria was included in this attribute including it's ID, year burned, percent overlap, and acres |
+   | Circleness_Scale | Float | A measure of a polygon's similarity to a true circle. calculated using the Shape_Length and Shape_Area fields. Circle-ness = 4*pi*(Shape_Area/(Shape_Length * Shape_Length)). As the number approaches 1, the polygon becomes more circular |
+   | Circle_Flag | String | Any Circle circle-ness values >=0.98 are flagged with a 1. The remaining values are null. 1 indicates that the polygon is very circle-like and is likely incorrect. However, other values that are not flagged may still be quite circular and incorrect |
+   | Exclude_From_Summary_Rasters | String | Some fires in this dataset appear to be buffered circles. These were kept in the dataset to show location and approximate area. However a decision was made to exclude circular fires larger than 1 acre in size from the summary raster calculations. This field indicates whether the fire was excluded from ('Yes') or included in ('No') the summary raster calculations |
+   | Shape_Length | Float | Automatically calculated perimeter length in meters |
+   | Shape_Area | Float | Automatically calculated polygon area in square meters |
 
-2. [US EPA Air Quality System API](https://aqs.epa.gov/aqsweb/documents/data_api.html): A nationwide repository of air sample data, encompassing meteorological insights and AQI values for diverse pollutants from an array of monitoring stations.
+2. [US EPA Air Quality System API](https://aqs.epa.gov/aqsweb/documents/data_api.html): A nationwide repository of air sample data, encompassing meteorological insights and AQI values for diverse pollutants from an array of monitoring stations.This dataset, accessed via an API from the EPA's Air Quality System database, contains historical and present Air Quality Index (AQI) measurements across the U.S. The AQI, ranging from 0 to 500, covers ground-level ozone, particle pollution, carbon monoxide, sulfur dioxide, and nitrogen dioxide levels. Focusing on AQI readings from Mesa County during fire seasons, this dataset is pivotal for correlating smoke estimates with actual air quality and potential health impacts. Usage guidelines and terms are available on the dataset's website listed above.
 
 3. [Respiratory Disease Mortalities in the United States (1980-2014)](https://ghdx.healthdata.org/record/ihme-data/united-states-chronic-respiratory-disease-mortality-rates-county-1980-2014): This dataset, available in CSV format from the Institute for Health Metrics and Evaluation (IHME) website, chronicles mortalities caused by respiratory diseases in the United States. Maintained and hosted by IHME, it covers mortality data from 1980 to 2014 across all counties in the USA.  This is placed as the `data/IHME_USA_COUNTY_RESP_DISEASE_MORTALITY_1980_2014_COLORADO_Y2017M09D26.CSV` in this repo.
 
@@ -89,29 +89,75 @@ This section provides an overview of the input data along with their sources:
 
 ### Intermediary data files in the data folder:
 
-- Daily_particulate_data_Grand_Junction.csv - Contains the sub result of the daily particulate AQI data for the Stations in Grand Junction over the years.           
-- Daily_gas_data_Grand_Junction.csv - Contains the sub result of the daily gaseous AQI data for the Stations in Grand Junction over the years.       
+- Daily_particulate_data_Grand_Junction.csv - Contains the sub result of the daily particulate AQI data for the Stations in Grand Junction over the years. This is built during the `src/Data Acquisition.ipynb` under the AQI Extraction.
+- Daily_gas_data_Grand_Junction.csv - Contains the sub result of the daily gaseous AQI data for the Stations in Grand Junction over the years. This is built during the `src/Data Acquisition.ipynb` under the AQI Extraction. 
 - average_top_5_aqi.csv  - the result of the calculation of AQI Estimates for the city, built during the analysis in `src/Building Smoke Estimate.ipynb`
 - average_smoke_area_distance_estimate.csv - the result of the calculation of Smoke Estimates for the city, built during the analysis in `src/Building Smoke Estimate.ipynb`
 - predictions_data.csv - Contains the result for the time series prediction that we did at the end of the `src/Building Smoke Estimate.ipynb`. 
 - Grand_Junction_Wildfire_Features_geometry_dropped.json - This is the wildfire dataset with the polygon features dropped. This is easier to work with and load for further analysis. built during the data extraction in `src/Data Acquisition.ipynb`
 
 
-## Pre requisite:
-In order to work with this code, you would need to download the data from the source mentioned above from the USGS website. We would be working with the file titled `USGS_Wildland_Fire_Combined_Dataset.json`, and you can safely discard the rest for running the project. Paste the file in the `data/GeoJSON_Exports/` folder.
+## Advice on Navigating this Repository:
 
+### Prerequisite:
+1. In order to work with this code, you would need to download the data from the source mentioned above from the USGS website. We would be working with the file titled `USGS_Wildland_Fire_Combined_Dataset.json`, and you can safely discard the rest for running the project. Paste the file in the `data/GeoJSON_Exports/` folder.
+2. You would need Python in your local machine with support for Jupyter notebooks. I strongly recommend installing [Anaconda Distribution](https://www.anaconda.com/download) for a clean setup.
+3. You would also need to install a few packages (recommeded to use pip package manager). 
+   - The best way is to create a conda environment and install packages using this code. (Substitute any name in env_name)
+      ```
+      conda create --name <env_name> --file requirements.txt
+      ```
+   - After creating the environment, activate it using:
+      ```
+      conda activate <env_name>
+      ```
+
+This flow outlines the steps to analyze the impact of wildfire smoke on respiratory-based mortality rates in Grand Junction County:
+
+**1. Data Acquisition (`src/Data Acquisition.ipynb`):**
+
+- This notebook requires an account for API extraction from the EPA API. Instructions are provided within the notebook.
+- **For Grand Junction County results:**
+    - **Do not run this notebook.** Processing can take several hours and may time out.
+    - Instead, proceed to step 2 with the pre-processed data available in the `data` folder.
+
+**2. Building Smoke Estimates (`src/Building Smoke Estimates.ipynb`):**
+
+- This notebook generates smoke estimates, cleans AQI data, and develops a time series model.
+- The datasets are pre-configured for Grand Junction County.
+- If you are only interested in Grand Junction County, you can skip step 1 and directly run this notebook.
+
+**3. Visualizations (`src/Visualizations.ipynb`):**
+
+- This notebook presents an overall analysis of the data trends.
+
+**4. Smoke Effects on Mortality (`src/Smoke Effects on Mortality.ipynb`):**
+
+- This notebook analyzes the relationship between wildfire smoke and respiratory-based mortality rates in Grand Junction County.
+- Required datasets are available in the `data` folder.
+
+
+<!-- 
 ## Outputs
 
 The analysis for now has led into 2 parts
 1. Creating a basic smoke impact model and comparing that with the AQI data from EPA. This can be viewed at the end of `src/Building Smoke estimates.ipynb` notebook.
-2. Creating visuals for the questions asked at the top of this document.
+2. Creating visuals for the questions asked at the top of this document. -->
 
+## Licenses:
+1. **USGS Wildland Fire Combined Dataset** - [USGS Copyrights and Credits](https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits)
+2. **IHME Mortalities from 1980 to 2014 from Respiratory Diseases in California Counties** - Data made available for download on IHME Websites can be used, shared, modified or built upon by non-commercial users in accordance with the [IHME FREE-OF-CHARGE NON-COMMERCIAL USER AGREEMENT](https://www.healthdata.org/about/ihme-free-charge-non-commercial-user-agreement).
+3. The below sample codes were referenced for the following tasks and have been provided under the [Creative Commons](https://creativecommons.org/) [CC-BY license](https://creativecommons.org/licenses/by/4.0/):
+    - [Sample notebook for Geodetic Distance Computation](https://drive.google.com/file/d/1qNI6hji8CvDeBsnLDAhJXvaqf2gcg8UV/view?usp=sharing)
+    - [Sample code for accessing the US EPA Air Quality System API](https://drive.google.com/file/d/1bxl9qrb_52RocKNGfbZ5znHVqFDMkUzf/view?usp=sharing)
+    - [Sample code for GeoJSON reader](https://drive.google.com/file/d/1TwCkvdaw0MxJzW7NSDg6XxYQ0dvaS44I/view?usp=sharing)
 
+## Special Considerations
 
-## References:
+- Based on Wildfire data
+- Based on AQI Data
+- Based on Mortality data
+- Based on model selection and correlation
+<!-- ## References:
 1. Welty, J.L., and Jeffries, M.I., 2021, Combined wildland fire datasets for the United States and certain territories, 1800s-Present: U.S. Geological Survey data release, https://doi.org/10.5066/P9ZXGFY3.
-2. Codebase of Prof David W. McDonald for data extraction and processing from the API: [Link](https://drive.google.com/file/d/1bxl9qrb_52RocKNGfbZ5znHVqFDMkUzf/view)
-
-
-
-
+2. Codebase of Prof David W. McDonald for data extraction and processing from the API: [Link](https://drive.google.com/file/d/1bxl9qrb_52RocKNGfbZ5znHVqFDMkUzf/view) -->
