@@ -65,29 +65,29 @@ This section provides an overview of the input data along with their sources:
 
 3. [Respiratory Disease Mortalities in the United States (1980-2014)](https://ghdx.healthdata.org/record/ihme-data/united-states-chronic-respiratory-disease-mortality-rates-county-1980-2014): This dataset, available in CSV format from the Institute for Health Metrics and Evaluation (IHME) website, chronicles mortalities caused by respiratory diseases in the United States. Maintained and hosted by IHME, it covers mortality data from 1980 to 2014 across all counties in the USA.  This is placed as the `data/IHME_USA_COUNTY_RESP_DISEASE_MORTALITY_1980_2014_COLORADO_Y2017M09D26.CSV` in this repo.
 
-The dataset offers comprehensive information on causes, years, sexes, and estimates such as posterior mean, 2.5th percentile, and 97.5th percentile estimates. It specifically outlines age-standardized mortality rates (deaths per 100,000 population) among various sexes and for the combined sexes for the years 1980-2014 across all counties. Included in this dataset are both string-based descriptors (measure_name, location_name, cause_name, sex, age_name, metric) and integer-based identifiers (measure_id, location_id, FIPS, cause_id, sex_id, age_id, year_id, mx, lower, upper). Importantly, the dataset is devoid of any null values across all columns, ensuring clean and comprehensive data. For further insights, a detailed description of the 16 columns is provided in the table below.
+   The dataset offers comprehensive information on causes, years, sexes, and estimates such as posterior mean, 2.5th percentile, and 97.5th percentile estimates. It specifically outlines age-standardized mortality rates (deaths per 100,000 population) among various sexes and for the combined sexes for the years 1980-2014 across all counties. Included in this dataset are both string-based descriptors (measure_name, location_name, cause_name, sex, age_name, metric) and integer-based identifiers (measure_id, location_id, FIPS, cause_id, sex_id, age_id, year_id, mx, lower, upper). Importantly, the dataset is devoid of any null values across all columns, ensuring clean and comprehensive data. For further insights, a detailed description of the 16 columns is provided in the table below.
 
-| NAME | DTYPE | DESCRIPTION |
-| ----------- | ----------- | ----------- |
-| measure_id | Integer | Unique numeric identifier for the measure generated |
-| measure_name | String | The measure (indicator) of the estimate |
-| location_id | Integer | Unique numeric identifier for the location generated |
-| location_name | String | Location of the estimate |
-| FIPS | Integer | The Federal Information Processing Standards (FIPS) code, a unique identifier for states and counties in the United States |
-| cause_id | Integer | Unique numeric identifier for the cause of disease or injury generated |
-| cause_name | String | Cause of disease or injury of the estimate |
-| sex_id | Integer | Unique numeric identifier for the sex generated |
-| sex | String | Gender for the estimate |
-| age_id | Integer | Unique numeric identifier for the age group generated |
-| age_name | String | Age group estimated |
-| year_id | Integer | Time period of estimate |
-| metric | String | Metric/unit of measure for the estimate |
-| mx | Float | Posterior mean estimate |
-| lower | Float | 2.5% percentile estimate |
-| upper | Float | 97.5% percentile estimate |
+   | NAME | DTYPE | DESCRIPTION |
+   | ----------- | ----------- | ----------- |
+   | measure_id | Integer | Unique numeric identifier for the measure generated |
+   | measure_name | String | The measure (indicator) of the estimate |
+   | location_id | Integer | Unique numeric identifier for the location generated |
+   | location_name | String | Location of the estimate |
+   | FIPS | Integer | The Federal Information Processing Standards (FIPS) code, a unique identifier for states and counties in the United States |
+   | cause_id | Integer | Unique numeric identifier for the cause of disease or injury generated |
+   | cause_name | String | Cause of disease or injury of the estimate |
+   | sex_id | Integer | Unique numeric identifier for the sex generated |
+   | sex | String | Gender for the estimate |
+   | age_id | Integer | Unique numeric identifier for the age group generated |
+   | age_name | String | Age group estimated |
+   | year_id | Integer | Time period of estimate |
+   | metric | String | Metric/unit of measure for the estimate |
+   | mx | Float | Posterior mean estimate |
+   | lower | Float | 2.5% percentile estimate |
+   | upper | Float | 97.5% percentile estimate |
 
 
-### Intermediary data files:
+### Intermediary data files in the data folder:
 
 - Daily_particulate_data_Grand_Junction.csv - Contains the sub result of the daily particulate AQI data for the Stations in Grand Junction over the years.           
 - Daily_gas_data_Grand_Junction.csv - Contains the sub result of the daily gaseous AQI data for the Stations in Grand Junction over the years.       
