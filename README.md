@@ -136,14 +136,6 @@ This flow outlines the steps to analyze the impact of wildfire smoke on respirat
 - This notebook analyzes the relationship between wildfire smoke and respiratory-based mortality rates in Grand Junction County.
 - Required datasets are available in the `data` folder.
 
-
-<!-- 
-## Outputs
-
-The analysis for now has led into 2 parts
-1. Creating a basic smoke impact model and comparing that with the AQI data from EPA. This can be viewed at the end of `src/Building Smoke estimates.ipynb` notebook.
-2. Creating visuals for the questions asked at the top of this document. -->
-
 ## Licenses:
 1. **USGS Wildland Fire Combined Dataset** - [USGS Copyrights and Credits](https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits)
 2. **IHME Mortalities from 1980 to 2014 from Respiratory Diseases in California Counties** - Data made available for download on IHME Websites can be used, shared, modified or built upon by non-commercial users in accordance with the [IHME FREE-OF-CHARGE NON-COMMERCIAL USER AGREEMENT](https://www.healthdata.org/about/ihme-free-charge-non-commercial-user-agreement).
@@ -154,10 +146,18 @@ The analysis for now has led into 2 parts
 
 ## Special Considerations
 
-- Based on Wildfire data
-- Based on AQI Data
-- Based on Mortality data
-- Based on model selection and correlation
+Given mortality paints a lagging picture of long-term effects, some key limitations exist. Definitively correlating acute episodic smoke exposure to immediate health impacts proves challenging. Confounding factors like patient medical history, access to care, and demographics also influence outcomes. Interpreting findings warrants acknowledging these constraints regarding direct causal attribution. The following are some of the many limitations that one would consider while interpreting these results.
+- Foremost among these factors is the inherent complexity and multifaceted nature of the relationship between wildfire smoke exposure and respiratory-related health outcomes. Wildfire events vary widely in intensity, duration, and proximity to populated areas, introducing variability in the composition and dispersion of smoke particles. This variability poses a challenge in precisely attributing respiratory health effects solely to wildfire smoke, given the potential overlap with other sources of air pollution and individual health determinants.
+- Another critical consideration revolves around the interplay of meteorological conditions and geographical features. Weather patterns, wind direction, and atmospheric conditions significantly impact the dispersion and transport of wildfire smoke particles. Variations in wind speed and direction can lead to fluctuations in the concentration and spread of smoke, potentially influencing the extent of exposure experienced by Grand Junction residents. Similarly, the local topography, including mountains, valleys, and urban landscapes, can influence how smoke disperses and accumulates, affecting the localized air quality and subsequent health impacts.
+- Furthermore, uncertainties pertaining to the demographic and behavioral characteristics of the population pose challenges in assessing the differential vulnerability and susceptibility to respiratory health effects. Factors such as age, pre-existing health conditions, socio-economic status, access to healthcare, and individual behaviors play pivotal roles in determining the severity of health impacts resulting from wildfire smoke exposure. Understanding and quantifying these demographic nuances and variations in exposure among different population groups remain essential for accurately gauging the true impact on the community's respiratory health, which the dataset does not provide.
+- Additionally, the availability and quality of data, while crucial for a comprehensive analysis, can present certain limitations. Data completeness, consistency across diverse sources, and temporal coverage are essential considerations when analyzing health outcomes and their association with environmental factors like wildfire smoke. Inadequacies or inconsistencies in data collection methodologies or reporting practices could introduce biases or limitations in our analysis, potentially affecting the accuracy and reliability of our findings. This research encounters inconsistencies within the datasets, encompassing different years in each, which could introduce bias when attempting to interpolate or merge them.
+- The analyzed period for health spanned 1980-2014 due to dataset constraints. However, wildfire tracking and smoke estimation data covered a broader 1963-2020 range. This partial time overlap challenges direct historical comparisons, forcing few interpolations of aligned trends.
+- The annual smoke exposure estimation metric simplifies complex particulate dispersal physics into an arbitrary distance and area burnt formula. In reality, weather, topography, fire behavior, and chemical properties dictate smoke plume trajectories. Thus, the model only provides a proxy indication rather than quantitatively accurate exposure measures.
+- Similarly, while Air Quality Index data delivers empirical pollution readings, the derived historical annual aggregate relies on extrapolation assumptions by averaging peak days to represent overall smoke impact. This generalization smoothes over hourly and daily fluctuations in actual air quality affecting human exposure.
+- Confounding variables beyond smoke also substantially influence respiratory mortality rates tied to factors like patient health histories, access to care, population demographical shifts, other pollution sources, and reporting discrepancies between databases. Quantitatively disentangling the proportion of death rate changes attributable solely to smoke exacerbation remains challenging without controlled studies.
+- Lastly, unforeseen changes in wildfire management practices, public health interventions, or socio-economic factors could influence the observed trends in respiratory-related health outcomes. Policy changes, advancements in firefighting techniques, or community-level initiatives aimed at mitigating smoke exposure might impact the relationship between wildfire smoke and respiratory health, thereby necessitating continuous monitoring and adaptation of our analysis approach.
+
+
 <!-- ## References:
 1. Welty, J.L., and Jeffries, M.I., 2021, Combined wildland fire datasets for the United States and certain territories, 1800s-Present: U.S. Geological Survey data release, https://doi.org/10.5066/P9ZXGFY3.
 2. Codebase of Prof David W. McDonald for data extraction and processing from the API: [Link](https://drive.google.com/file/d/1bxl9qrb_52RocKNGfbZ5znHVqFDMkUzf/view) -->
